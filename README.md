@@ -1,5 +1,4 @@
-1. Finetuning Base Model
-  Using the `Finetuning_base_model` notebook for the finetuning process.
+1. Finetuning Base Model. Using the `Finetuning_base_model` notebook for the finetuning process.
 3. Using brio_tokenized.py to produce .tokenized of .source and .target. Example:
 ```console
 python brio_tokenize.py --fin ./train.source --fout ./train.source.tokenized
