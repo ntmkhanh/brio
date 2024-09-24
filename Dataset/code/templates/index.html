@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel= "stylesheet" type= "text/css" href="{{url_for('static',filename='styles/style.css') }}">
+    <title>Tạo công thức nấu ăn ngon</title>
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <ul class=flashes>
+        {% for message in messages %}
+          <li>{{ message }}</li>
+        {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+    <style>
+        body {
+            background-image: url("{{ url_for('static',filename='images/bg.jpg') }}");
+            height: 500px;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: relative;
+        }
+    </style>
+    <script>
+      function validateForm() {
+        let x = document.forms["myForm"]["ingredients"].value;
+        if (x == "") {
+          alert("Vui lòng nhập nguyên liệu vào!");
+          return false;
+        }
+      }
+      </script>
+  </head>
+  <body>
+    <div class="main1">
+      <h2>TẠO CÔNG THỨC NẤU ĂN YUMMY!</h2>
+      <img src="{{ url_for('static',filename='images/cooking-logo.png') }}" width="50" height="50" class="d-inline-block align-top" alt="">
+      <form name="myForm" class="form-style" action="http://127.0.0.1:5000/goi-y-mon" onsubmit="return(validateForm())" method="post" >
+        <label form="fname">Nhập nguyên liệu:</label><br><br>
+        <input type="text" size="30" id="ingredients" name="ingredients"><br><br>
+        <input class="btn btn-primary text-size" type="submit" name="action_TT" value="Tìm món ăn phổ biến">
+        <input class="btn btn-primary text-size" type="submit" name="action_TM" value="Tạo công thức nấu ăn">
+      </form>
+      {% if error %}
+      <br>
+      <p class=error style="color: red;"><strong>{{ error }}</strong>
+      {% endif %}
+    </div>
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  </body>
+</html>

@@ -1,0 +1,25 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+flask-restx = "*"
+flask-sqlalchemy = "*"
+flask-jwt-extended = "*"
+python-decouple = "*"
+flask = "*"
+mysqlclient = "*"
+werkzeug = "==2.1.2"
+typing-extensions = "*"
+flask-mysqldb = "*"
+pymysql = "*"
+flask-cors = "*"
+requests = "*"
+transformers = {extras = ["torch"], version = "*"}
+selenium = "==4.4.3"
+
+[dev-packages]
+
+[requires]
+python_version = "3.10"

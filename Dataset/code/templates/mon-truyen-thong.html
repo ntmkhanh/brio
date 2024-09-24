@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel= "stylesheet" type= "text/css" href="{{url_for('static',filename='styles/style.css') }}">
+    <title>Tạo công thức nấu ăn ngon</title>
+    <style>
+        /* body {
+            background-image: url("{{ url_for('static',filename='images/bg.jpg') }}");
+        } */
+    </style>
+  </head>
+  <body>
+
+    <div class="main">
+        <h2>CÁC MÓN PHỔ BIẾN</h2>
+          <table>
+            {% for i in list_mon %}
+            <tr>
+              <td>
+                  <img class='img-tt' src={{i[4]}}>
+                  <p><b>{{i[3]}}</p>
+              </td>
+              <td>
+                  <p><b>Khẩu phần: </b>{{i[5]}}</p>
+                  <p><b>Mô tả: </b>{{i[8]}}</p>
+                  <a href="{{ url_for('detail', id = i[0]) }}">Xem chi tiết</a>
+              </td> 
+            </tr>
+            {% endfor %}
+            {% for m in monkhac %}
+            <tr>
+              <td>
+                  <img class='img-tt' src={{m[4]}}>
+                  <p><b>{{m[3]}}</p>
+              </td>
+              <td>
+                    <p><b>Khẩu phần: </b>{{m[5]}}</p>
+                    <p><b>Mô tả: </b>{{m[8]}}</p>
+                    <a href="{{ url_for('detail', id = m[0]) }}">Xem chi tiết</a>
+              </td> 
+            </tr>
+            {% endfor %}
+          </table>
+         
+          <a class="btn-ql" href="{{ url_for('index') }}"><Button> Quay lại</Button></a>
+    </div>
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  </body>
+</html>

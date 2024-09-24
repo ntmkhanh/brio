@@ -1,0 +1,18 @@
+{
+    "epoch": 2.0,
+    "eval_gen_len": 79.23866666666666,
+    "eval_loss": 2.1351499557495117,
+    "eval_rouge1": 34.4679,
+    "eval_rouge2": 13.5545,
+    "eval_rougeL": 23.3439,
+    "eval_rougeLsum": 31.8783,
+    "eval_runtime": 1999.3604,
+    "eval_samples": 1500,
+    "eval_samples_per_second": 0.75,
+    "eval_steps_per_second": 0.75,
+    "train_loss": 1.3095979721069335,
+    "train_runtime": 10258.3854,
+    "train_samples": 10000,
+    "train_samples_per_second": 1.95,
+    "train_steps_per_second": 1.95
+}

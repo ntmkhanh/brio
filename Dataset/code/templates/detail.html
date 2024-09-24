@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel= "stylesheet" type= "text/css" href="{{url_for('static',filename='styles/style.css') }}">
+    <title>Tạo công thức nấu ăn ngon</title>
+    <style>
+        /* body {
+            background-image: url("{{ url_for('static',filename='images/bg.jpg') }}");
+        } */
+    </style>
+  </head>
+  <body>
+    <div class="main">
+        <!-- <h2>CÁCH LÀM MÓN ĂN</h2> -->
+        <img class="img-item rounded" src={{mon[4]}}>
+        <p class="title"><b>{{mon[3]}}</b><p>
+        <div class="row center">
+            
+            <div class="col-3 border border-black rounded-left">
+              <p><b>Nguyên liệu:</b></p>
+                {% for n in nguyenlieu %}
+                <b>{{n[6]}}:</b> {{n[2]}} {{n[9]}}</br>
+                {% endfor %}
+            </div>
+            <div class="col-9 border border-black rounded-right">
+              <p><b>Cách thực hiện:</b></p>
+              {% for s in ct %}
+                <b>Bước {{s[3]}}:</b> {{s[2]}}</br>
+              {% endfor %}
+          </div>
+        </div>
+        <a class="btn-ql" href="{{ url_for('index') }}"><Button> Quay lại</Button></a>
+    </div>
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  </body>
+</html>
