@@ -4,7 +4,7 @@ python brio_tokenize.py --fin ./train.source --fout ./train.source.tokenized
 ```
 2. Using gen_candidate.py to produce .out file from .source file If you use base model to generate candidate summaries, uncomment the coresponding class of that model (not BRIO class) If you use BRIO to generate candidate summaries, uncomment the coresponding BRIO import, class and model.generation_mode() You can config the number of candidates inside by altering num_return_sequences=6, num_beam_groups=6, num_beams=6 ( all of them must have the same value) This process will take a lot of time so I recommend you to do it on Google colab. Example:
 ```console
-python gen_candidate.py --gpuid 0 --src_dir ./train.source --tgt_dir ./train.out --dataset cnndm 
+python gen_candidate.py --gpuid 0 --src_dir ./train.source --tgt_dir ./train.out --dataset data 
 ```
 3. Using brio_tokenizer.py to produce . tokenized of .out
 After all those steps above, you should have 6 files each dataset (train.source, train.source.tokenized, train.target, train.target.tokenized, train.out, train.out.tokenized,...). Put all of them in the same folder.
