@@ -1,5 +1,6 @@
 1. Finetuning Base Model
-2. Using brio_tokenized.py to produce .tokenized of .source and .target. Example:
+  Using the `Finetuning_base_model` notebook for the finetuning process.
+3. Using brio_tokenized.py to produce .tokenized of .source and .target. Example:
 ```console
 python brio_tokenize.py --fin ./train.source --fout ./train.source.tokenized
 ```
@@ -14,7 +15,7 @@ Create a new folder inside the root folder, this is the name of the dataset. Exa
 ```console
 python preprocess.py --src_dir "path for the 18 .source, .target, .out files" --tgt_dir data/diverse --split train --cand_num 6 --dataset data -l
 ```
-Using the `Finetuning_base_model` notebook for the finetuning process.
+
 ## Training Base Model with BRIO
 Inside the `main.py`:
   - In the base_setting: 
